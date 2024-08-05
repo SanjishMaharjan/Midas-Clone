@@ -3,7 +3,7 @@ import {
   // fetchData,
   fetchCatData,
   fetchCatImageData,
-} from '../../components/Axios_get'
+} from '../../axios/Axios_get'
 import { Typography, Divider, Card } from 'antd'
 
 const { Paragraph } = Typography

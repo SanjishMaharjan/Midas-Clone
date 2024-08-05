@@ -2,7 +2,8 @@ import { Layout, Select } from 'antd'
 import Navigationbar from '../../components/Navigationbar'
 import ContentsList from '../../components/ContentsList'
 import sampleData from '../../sampleData/samplecontent.json'
-import Sidebar from '../../components/Sidebar'
+import Sidebar from '../../components/Sidebar/Sidebar'
+import NewSidebar from '../../components/Sidebar/TestSidebar'
 // import AntBreadcrumb from '../../components/Navigations/AntBreadcrumb'
 // import { HomeOutlined } from '@ant-design/icons'
 
@@ -15,7 +16,7 @@ const HomePage = () => {
         <Navigationbar />
       </Header>
       <Layout>
-        <Sidebar />
+        <NewSidebar />
 
         <Layout className="p-10 bg-gray-100">
           {/* <AntBreadcrumb items={items} /> */}

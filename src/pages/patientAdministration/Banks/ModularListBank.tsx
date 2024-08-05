@@ -14,6 +14,11 @@ import BankTable from './BankTable'
 import { EditModal, ViewModal, AddModal } from './BankModals'
 import { IoMdAddCircleOutline } from 'react-icons/io'
 import { BankDetails } from '../../../types/Banks/BankTypes'
+import NewSidebar from '../../../components/Sidebar/TestSidebar'
+import { Layout } from 'antd'
+import Navigationbar from '../../../components/Navigationbar'
+
+const { Header } = Layout
 
 const ModularListBank: React.FC = () => {
   const [viewModalVisible, setViewModalVisible] = useState(false)
@@ -104,39 +109,45 @@ const ModularListBank: React.FC = () => {
   ]
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold m-5 text-center">List of Banks</h1>
-      <AntBreadcrumb items={Breadcrumbitems} />
-      <div className="p-4 m-4 border-2 rounded-lg bg-white">
-        <TopTab
-          searchPlaceholder="Search Banks"
-          onSearch={(value) => console.log('Search:', value)}
-          onAddClick={handleAddClick}
-          addButtonText="Add Bank"
-          addButtonIcon={<IoMdAddCircleOutline />}
-        />
-        <BankTable
-          data={bankDetails}
-          onView={handleViewClick}
-          onEdit={handleEditClick}
-          onArchive={handleArchiveBank}
-        />
-        <ViewModal
-          visible={viewModalVisible}
-          onClose={handleCloseViewModal}
-          bankDetails={selectedBank}
-        />
-        <EditModal
-          visible={editModalVisible}
-          onClose={handleCloseEditModal}
-          bankDetails={selectedBank}
-          onSave={handleSaveBankDetails}
-        />
-        <AddModal
-          visible={addModalVisible}
-          onClose={handleCloseAddModal}
-          onAdd={handleAddBankDetails}
-        />
+    <div className="flex">
+      <NewSidebar />
+      <div className="flex-1">
+        <Header className="bg-white">
+          <Navigationbar />
+        </Header>
+        {/* <h1 className="text-2xl font-bold m-5 text-center">List of Banks</h1> */}
+        <AntBreadcrumb items={Breadcrumbitems} />
+        <div className="p-4 m-4 border-2 rounded-lg bg-white">
+          <TopTab
+            searchPlaceholder="Search Banks"
+            onSearch={(value) => console.log('Search:', value)}
+            onAddClick={handleAddClick}
+            addButtonText="Add Bank"
+            addButtonIcon={<IoMdAddCircleOutline />}
+          />
+          <BankTable
+            data={bankDetails}
+            onView={handleViewClick}
+            onEdit={handleEditClick}
+            onArchive={handleArchiveBank}
+          />
+          <ViewModal
+            visible={viewModalVisible}
+            onClose={handleCloseViewModal}
+            bankDetails={selectedBank}
+          />
+          <EditModal
+            visible={editModalVisible}
+            onClose={handleCloseEditModal}
+            bankDetails={selectedBank}
+            onSave={handleSaveBankDetails}
+          />
+          <AddModal
+            visible={addModalVisible}
+            onClose={handleCloseAddModal}
+            onAdd={handleAddBankDetails}
+          />
+        </div>
       </div>
     </div>
   )
