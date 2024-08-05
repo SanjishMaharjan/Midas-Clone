@@ -1,0 +1,9 @@
+.custom-table .ant-table-tbody>tr>td {
+    padding: 5px;
+    /* Adjust this value as needed */
+}
+
+.custom-table .ant-table-thead>tr>th {
+    padding: 5px;
+    /* Adjust this value as needed */
+}

@@ -1,0 +1,64 @@
+[
+    {
+      "title": "Utilities & Setup",
+      "description": "User and permissions, Admin...",
+      "imageUrl": "./src/assets/images/Group 128.png"
+    },
+    {
+      "title": "Scan Document",
+      "description": "Scan document, patient his...",
+      "imageUrl": "./src/assets/images/Group 150.png"
+    },
+    {
+      "title": "Account",
+      "description": "User and permissions, Admin...",
+      "imageUrl": "./src/assets/images/Group 152.png"
+    },
+    {
+      "title": "Appointment",
+      "description": "User and permissions, Admin...",
+      "imageUrl": "./src/assets/images/Group 154.png"
+    },
+    {
+      "title": "Patient Administration",
+      "description": "Scan document, patient his...",
+      "imageUrl": "./src/assets/images/Group 157.png"
+     
+    },
+    {
+      "title": "Emergency",
+      "description": "User and permissions, Admin...",
+      "imageUrl": "./src/assets/images/Group 159.png"
+    },
+    {
+      "title": "Queue Management",
+      "description": "User and permissions, Admin...",
+      "imageUrl": "./src/assets/images/Group 161.png"
+    },
+    {
+      "title": "Claim Management",
+      "description": "Scan document, patient his...",
+      "imageUrl": "./src/assets/images/Group 164.png"
+    },
+    {
+      "title": "ICU",
+      "description": "User and permissions, Admin...",
+      "imageUrl": "./src/assets/images/Group 157.png"
+    },
+    {
+      "title": "OT",
+      "description": "User and permissions, Admin...",
+      "imageUrl": "./src/assets/images/Group 159.png"
+    },
+    {
+      "title": "Diet Plan",
+      "description": "Scan document, patient his...",
+      "imageUrl": "./src/assets/images/Group 152.png"
+    },
+    {
+      "title": "Analytics",
+      "description": "User and permissions, Admin...",
+      "imageUrl": "./src/assets/images/Group 150.png"
+    }
+  ]
+  
