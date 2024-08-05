@@ -25,8 +25,8 @@ const ModularListBank: React.FC = () => {
   const getBankData = async () => {
     try {
       const data = await fetchBankDetails()
-      setBankDetails(data)
-      console.log(data)
+      setBankDetails(data.data)
+      console.log(data.data)
     } catch (error) {
       console.error('Error fetching data:', error)
     }

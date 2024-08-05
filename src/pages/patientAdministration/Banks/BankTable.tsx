@@ -5,6 +5,7 @@ import { EyeOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons'
 // import { BankDetails } from './ListBank'
 import message from 'antd/lib/message'
 import { BankDetails } from '../../../types/Banks/BankTypes'
+import '../../../components/ReusableTable/ReusableTableStyles.css'
 
 interface BankTableProps {
   data: BankDetails[]
@@ -85,7 +86,14 @@ const BankTable: React.FC<BankTableProps> = ({
     },
   ]
 
-  return <Table columns={columns} dataSource={data} rowKey="id" />
+  return (
+    <Table
+      className="custom-table"
+      columns={columns}
+      dataSource={data}
+      rowKey="id"
+    />
+  )
 }
 
 export default BankTable

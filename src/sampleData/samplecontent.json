@@ -1,37 +1,37 @@
 [
     {
-      "title": "Utilities & Setup",
+      "title": "User Management",
       "description": "User and permissions, Admin...",
       "imageUrl": "./src/assets/images/Group 128.png"
     },
     {
-      "title": "Scan Document",
+      "title": "Patient Administration",
       "description": "Scan document, patient his...",
       "imageUrl": "./src/assets/images/Group 150.png"
     },
     {
-      "title": "Account",
+      "title": "Investigation",
       "description": "User and permissions, Admin...",
       "imageUrl": "./src/assets/images/Group 152.png"
     },
     {
-      "title": "Appointment",
+      "title": "Account",
       "description": "User and permissions, Admin...",
       "imageUrl": "./src/assets/images/Group 154.png"
     },
     {
-      "title": "Patient Administration",
+      "title": "Pharmacy",
       "description": "Scan document, patient his...",
       "imageUrl": "./src/assets/images/Group 157.png"
      
     },
     {
-      "title": "Emergency",
+      "title": "Agent Portal",
       "description": "User and permissions, Admin...",
       "imageUrl": "./src/assets/images/Group 159.png"
     },
     {
-      "title": "Queue Management",
+      "title": "My Profile",
       "description": "User and permissions, Admin...",
       "imageUrl": "./src/assets/images/Group 161.png"
     },
@@ -41,24 +41,9 @@
       "imageUrl": "./src/assets/images/Group 164.png"
     },
     {
-      "title": "ICU",
+      "title": "Admission and Discharge",
       "description": "User and permissions, Admin...",
       "imageUrl": "./src/assets/images/Group 157.png"
-    },
-    {
-      "title": "OT",
-      "description": "User and permissions, Admin...",
-      "imageUrl": "./src/assets/images/Group 159.png"
-    },
-    {
-      "title": "Diet Plan",
-      "description": "Scan document, patient his...",
-      "imageUrl": "./src/assets/images/Group 152.png"
-    },
-    {
-      "title": "Analytics",
-      "description": "User and permissions, Admin...",
-      "imageUrl": "./src/assets/images/Group 150.png"
     }
   ]
   

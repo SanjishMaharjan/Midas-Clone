@@ -36,8 +36,8 @@ function App() {
             <Route path="/mainlayout" element={<MainLayout />} />
             <Route path="/patientlist" element={<PatientList />} />
             <Route path="/test" element={<Test />} />
-            <Route path="/banks" element={<ListBank />} />
-            <Route path="/modebanks" element={<ModularListBank />} />
+            <Route path="/oldbanks" element={<ListBank />} />
+            <Route path="/banks" element={<ModularListBank />} />
             <Route path="/formpatientdata" element={<FormPatientData />} />
 
             <Route path="*" element={<PageNotFound />} />
