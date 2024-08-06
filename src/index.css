@@ -7,3 +7,56 @@ body {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Base styles for light mode */
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --icon-color: black;
+    --border-color: gray;
+}
+
+/* Base styles for light mode */
+body.light {
+    --bg-color: white;
+    --text-color: black;
+    --icon-color: black;
+    --border-color: gray;
+    --menu-item-text-color: black;
+    --input-text-color: black;
+    --samecolor: white;
+}
+
+/* Dark mode overrides */
+body.dark {
+    /* Dark background */
+    --bg-color: #1f2937;
+    --samecolor: white;
+    --text-color: white;
+    --icon-color: white;
+    --border-color: #4b5563;
+    --menu-item-text-color: white;
+    --input-text-color: white
+        /* Darker border */
+}
+
+/* Apply CSS variables */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.ant-btn-primary {
+    background-color: var(--bg-color);
+    color: var(--samecolor);
+}
+
+.ant-menu-item {
+    color: var(--menu-item-text-color);
+    /* Apply text color variable */
+}
+
+.ant-menu-item-selected {
+    background-color: var(--bg-color);
+    /* To override default selected background */
+}

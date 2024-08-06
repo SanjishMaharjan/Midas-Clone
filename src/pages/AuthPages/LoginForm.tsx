@@ -21,14 +21,14 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin, isLoading }) => {
       className="w-full max-w-sm mt-4 flex flex-col gap-3"
       onFinish={handleSubmit}
     >
-      <Form.Item label="Username">
+      <Form.Item>
         <Input
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
       </Form.Item>
-      <Form.Item label="Password">
+      <Form.Item>
         <Input.Password
           placeholder="Password"
           value={password}

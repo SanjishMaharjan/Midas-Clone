@@ -38,10 +38,10 @@ const AdminLoginScreen: React.FC = () => {
 
   return (
     <div className="w-full flex flex-col items-center justify-center gap-2">
-      <h2 className="mt-5 text-center text-lg font-bold text-customPurple">
+      <h2 className="mt-5 text-center text-lg font-bold text-[var(--text-color)]">
         Midas Hospital
       </h2>
-      <h2 className="m-5 text-center text-2xl font-bold text-customPurple">
+      <h2 className="m-5 text-center text-2xl font-bold text-[var(--text-color)]">
         Login
       </h2>
       <div className="w-full max-w-sm mt-4 flex flex-col gap-3">

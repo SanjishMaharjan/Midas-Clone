@@ -14,9 +14,9 @@ import BankTable from './BankTable'
 import { EditModal, ViewModal, AddModal } from './BankModals'
 import { IoMdAddCircleOutline } from 'react-icons/io'
 import { BankDetails } from '../../../types/Banks/BankTypes'
-import NewSidebar from '../../../components/Sidebar/TestSidebar'
+import NewSidebar from '../../../components/Sidebar/Sidebar'
 import { Layout } from 'antd'
-import Navigationbar from '../../../components/Navigationbar'
+import { OurPaginationProps } from '../../../types/Banks/BankTypes'
 
 const { Header } = Layout
 
@@ -26,12 +26,24 @@ const ModularListBank: React.FC = () => {
   const [addModalVisible, setAddModalVisible] = useState(false)
   const [selectedBank, setSelectedBank] = useState<BankDetails | null>(null)
   const [bankDetails, setBankDetails] = useState<BankDetails[]>([])
+  const [pagination, setPagination] = useState<OurPaginationProps>({
+    current_page: 1,
+    page_size: 10,
+    total: 0,
+  })
 
   const getBankData = async () => {
     try {
       const data = await fetchBankDetails()
       setBankDetails(data.data)
       console.log(data.data)
+      const paginationInfo = data.meta
+      setPagination({
+        current_page: paginationInfo.current_page,
+        page_size: paginationInfo.page_size,
+        total: paginationInfo.total,
+      })
+      console.log(pagination)
     } catch (error) {
       console.error('Error fetching data:', error)
     }
@@ -77,7 +89,7 @@ const ModularListBank: React.FC = () => {
 
   useEffect(() => {
     getBankData()
-  }, [])
+  }, [pagination.current_page, pagination.page_size])
 
   const handleViewClick = (bank: BankDetails) => {
     setSelectedBank(bank)
@@ -97,10 +109,22 @@ const ModularListBank: React.FC = () => {
   const handleCloseEditModal = () => setEditModalVisible(false)
   const handleCloseAddModal = () => setAddModalVisible(false)
 
+  const handlePaginationChange = (page: number, pageSize?: number) => {
+    setPagination((prevPagination) => ({
+      ...prevPagination,
+      current_page: page,
+      page_size: pageSize || prevPagination.page_size,
+    }))
+  }
+
   const Breadcrumbitems = [
     {
       title: <HomeOutlined />,
       href: '/',
+    },
+    {
+      title: 'Patient Administration',
+      href: '/test',
     },
     {
       title: 'Banks',
@@ -112,12 +136,8 @@ const ModularListBank: React.FC = () => {
     <div className="flex">
       <NewSidebar />
       <div className="flex-1">
-        <Header className="bg-white">
-          <Navigationbar />
-        </Header>
-        {/* <h1 className="text-2xl font-bold m-5 text-center">List of Banks</h1> */}
         <AntBreadcrumb items={Breadcrumbitems} />
-        <div className="p-4 m-4 border-2 rounded-lg bg-white">
+        <div className="p-4 m-4 border-2  rounded-lg bg-[var(--bg-color)] ">
           <TopTab
             searchPlaceholder="Search Banks"
             onSearch={(value) => console.log('Search:', value)}
@@ -130,6 +150,12 @@ const ModularListBank: React.FC = () => {
             onView={handleViewClick}
             onEdit={handleEditClick}
             onArchive={handleArchiveBank}
+            pagination={{
+              current_page: pagination.current_page,
+              page_size: pagination.page_size,
+              total: pagination.total,
+            }}
+            onPaginationChange={handlePaginationChange}
           />
           <ViewModal
             visible={viewModalVisible}

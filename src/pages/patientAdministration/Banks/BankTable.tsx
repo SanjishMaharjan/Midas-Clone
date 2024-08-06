@@ -1,21 +1,34 @@
 import React from 'react'
-import { Table, Popover, Popconfirm, Space } from 'antd'
+import { Table, Popover, Popconfirm, Space, ConfigProvider } from 'antd'
 import { BsThreeDots } from 'react-icons/bs'
 import { EyeOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons'
 // import { BankDetails } from './ListBank'
 import message from 'antd/lib/message'
 import { BankDetails } from '../../../types/Banks/BankTypes'
 import '../../../components/ReusableTable/ReusableTableStyles.css'
+import { OurPaginationProps } from '../../../types/Banks/BankTypes'
 
 interface BankTableProps {
   data: BankDetails[]
+  pagination: OurPaginationProps
   onView: (bank: BankDetails) => void
   onEdit: (bank: BankDetails) => void
   onArchive: (id: string) => void
+  onPaginationChange: (page: number, pageSize?: number) => void
+}
+
+const customizeToken = {
+  Table: {
+    headerBg: 'var(--bg-color)',
+    headerColor: 'var(--text-color)',
+    rowHoverBg: '#var(--bg-color)',
+    borderColor: '#d9d9d9',
+  },
 }
 
 const BankTable: React.FC<BankTableProps> = ({
   data,
+  pagination,
   onView,
   onEdit,
   onArchive,
@@ -48,9 +61,9 @@ const BankTable: React.FC<BankTableProps> = ({
 
   const columns = [
     {
-      title: 'ID',
-      dataIndex: 'id',
-      key: 'id',
+      title: 'S.N',
+      dataIndex: 'sn',
+      key: 'sn',
     },
     {
       title: 'Name',
@@ -87,12 +100,30 @@ const BankTable: React.FC<BankTableProps> = ({
   ]
 
   return (
-    <Table
-      className="custom-table"
-      columns={columns}
-      dataSource={data}
-      rowKey="id"
-    />
+    <>
+      {/* <h1>Current Page: {pagination.current_page}</h1>
+      <h1>Page Size: {pagination.page_size}</h1>
+      <h1>Total: {pagination.total}</h1> */}
+      <ConfigProvider
+        theme={{
+          components: customizeToken,
+        }}
+      >
+        <Table
+          className="custom-table"
+          columns={columns}
+          dataSource={data}
+          rowKey="id"
+          style={{ backgroundColor: `var(--bg-color)` }}
+          // pagination={{
+          //   current: pagination.current_page,
+          //   pageSize: pagination.page_size,
+          //   total: pagination.total,
+          // }}
+          // pagination={pagination}
+        />
+      </ConfigProvider>
+    </>
   )
 }
 
